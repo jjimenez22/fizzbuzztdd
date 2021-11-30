@@ -1,11 +1,15 @@
-const fizzBuzz = (n: number): string => {
-  if (n % 15 === 0) return 'fizzbuzz'
+import { match } from 'x-match-expression'
 
-  if (n % 3 === 0) return 'fizz'
+const isDivisibleBy =
+  (dividient: number) =>
+  (quotient: number): boolean =>
+    quotient % dividient === 0
 
-  if (n % 5 === 0) return 'buzz'
-
-  return `${n}`
-}
+const fizzBuzz = (n: number): string =>
+  match(n)
+    .case(isDivisibleBy(15), 'fizzbuzz')
+    .case(isDivisibleBy(3), 'fizz')
+    .case(isDivisibleBy(5), 'buzz')
+    .default(`${n}`)
 
 export default fizzBuzz

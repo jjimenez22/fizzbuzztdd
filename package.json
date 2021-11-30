@@ -1,7 +1,9 @@
 {
   "name": "fizzbuzztdd",
   "jest": {
-    "roots": ["./src"],
+    "roots": [
+      "./src"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest",
       "^.+\\.tsx?$": "ts-jest"
@@ -36,5 +38,8 @@
     "prettier": "^2.4.1",
     "ts-jest": "^27.0.7",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "x-match-expression": "^0.2.1"
   }
 }
